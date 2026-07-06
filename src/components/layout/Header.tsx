@@ -23,7 +23,7 @@ export default function Header() {
       <div className="bg-[#123C73] text-sm text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-2 md:justify-between md:px-6">
           <p className="text-xs font-medium md:text-sm">
-            ⭐ EDU FAMILY - <em>Since 2023</em>
+            ⭐ EDU FAMILY ~ <em>Since 2023</em>
           </p>
 
           <div className="hidden items-center gap-6 md:flex">

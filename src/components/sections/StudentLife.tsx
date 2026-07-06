@@ -135,20 +135,20 @@ export default function StudentLife() {
 
   return (
     <section className="bg-[#F8FAFC] py-14 md:py-24">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
         <SectionHeading
           title="Student Life"
           subtitle="Learning Beyond the Classroom"
         />
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {activities.map((item, index) => (
             <button
               key={item.title}
               onClick={() => openGallery(index)}
               className="group overflow-hidden rounded-3xl bg-white text-left shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-64 overflow-hidden sm:h-72 lg:h-80">
                 <Image
                   src={item.images[0]}
                   alt={item.title}
@@ -158,12 +158,12 @@ export default function StudentLife() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-                  <h3 className="text-2xl font-bold text-white">
+                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+                  <h3 className="text-xl font-bold text-white md:text-2xl">
                     {item.title}
                   </h3>
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full  text-[#D4AF37]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[#D4AF37] md:h-12 md:w-12">
                     <Search size={20} />
                   </div>
                 </div>
@@ -175,23 +175,23 @@ export default function StudentLife() {
 
       {activity && (
         <div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 px-4"
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 px-3 py-4 md:px-4"
           onClick={closeGallery}
         >
           <div
-            className="relative grid w-full max-w-6xl gap-8 rounded-3xl bg-white p-6 shadow-2xl lg:grid-cols-[1.4fr_1fr]"
+            className="relative grid max-h-[90vh] w-full max-w-6xl gap-6 overflow-y-auto rounded-3xl bg-white p-4 shadow-2xl md:p-6 lg:grid-cols-[1.4fr_1fr] lg:gap-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={closeGallery}
-              className="absolute right-5 top-5 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#123C73] shadow-lg transition hover:rotate-90 hover:bg-[#D4AF37]"
+              className="absolute right-3 top-3 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#123C73] shadow-lg transition hover:bg-[#123C73] hover:text-white md:right-4 md:top-4"
               aria-label="Close gallery"
             >
               <X size={22} />
             </button>
 
             <div>
-              <div className="relative h-[460px] overflow-hidden rounded-2xl bg-gray-100">
+              <div className="relative h-[260px] overflow-hidden rounded-2xl bg-gray-100 sm:h-[360px] lg:h-[460px]">
                 <Image
                   src={activity.images[selectedImage]}
                   alt={activity.title}
@@ -201,7 +201,7 @@ export default function StudentLife() {
 
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#123C73] shadow-lg transition hover:bg-[#D4AF37]"
+                  className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#123C73] shadow-lg transition hover:bg-[#D4AF37] md:left-4 md:h-11 md:w-11"
                   aria-label="Previous image"
                 >
                   <ChevronLeft size={24} />
@@ -209,19 +209,19 @@ export default function StudentLife() {
 
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#123C73] shadow-lg transition hover:bg-[#D4AF37]"
+                  className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#123C73] shadow-lg transition hover:bg-[#D4AF37] md:right-4 md:h-11 md:w-11"
                   aria-label="Next image"
                 >
                   <ChevronRight size={24} />
                 </button>
               </div>
 
-              <div className="mt-4 grid grid-cols-4 gap-3">
+              <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
                 {activity.images.map((image, index) => (
                   <button
                     key={image}
                     onClick={() => setSelectedImage(index)}
-                    className={`relative h-24 overflow-hidden rounded-xl border-4 transition ${
+                    className={`relative h-20 overflow-hidden rounded-xl border-4 transition sm:h-24 ${
                       selectedImage === index
                         ? "border-[#D4AF37]"
                         : "border-transparent"
@@ -238,23 +238,23 @@ export default function StudentLife() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center pr-10">
+            <div className="flex flex-col justify-center pr-0 lg:pr-10">
               <p className="font-semibold text-[#D4AF37]">
                 {activity.subtitle}
               </p>
 
-              <h3 className="mt-3 text-4xl font-bold text-[#123C73]">
+              <h3 className="mt-3 text-3xl font-bold text-[#123C73] md:text-4xl">
                 {activity.title}
               </h3>
 
-              <p className="mt-6 leading-8 text-gray-600">
+              <p className="mt-5 leading-8 text-gray-600 md:mt-6">
                 {activity.description}
               </p>
 
-              <div className="mt-8 space-y-4 border-t pt-6">
+              <div className="mt-6 space-y-4 border-t pt-6 md:mt-8">
                 {activity.points.map((point) => (
                   <div key={point} className="flex items-center gap-3">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#D4AF37]/20 text-sm font-bold text-[#123C73]">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#D4AF37]/20 text-sm font-bold text-[#123C73]">
                       ✓
                     </span>
                     <p className="text-gray-700">{point}</p>

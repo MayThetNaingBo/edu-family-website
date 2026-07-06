@@ -32,7 +32,7 @@ export default function ContactSection() {
 
         {/* Contact Form */}
         <div className="rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#123C73]">
+          <h2 className="text-3xl font-bold text-[#123C73] md:text-5xl">
             Send Us a Message
           </h2>
 
@@ -44,30 +44,33 @@ export default function ContactSection() {
 
           <form className="mt-10 space-y-6">
             <input
+              type="text"
               placeholder="Full Name"
-              className="w-full rounded-xl border p-4 outline-none transition focus:border-[#123C73]"
+              className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full rounded-xl border p-4 outline-none transition focus:border-[#123C73]"
+              className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <input
+              type="tel"
               placeholder="Phone Number"
-              className="w-full rounded-xl border p-4 outline-none transition focus:border-[#123C73]"
+              className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <input
+              type="text"
               placeholder="Subject"
-              className="w-full rounded-xl border p-4 outline-none transition focus:border-[#123C73]"
+              className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <textarea
               rows={6}
               placeholder="Your Message"
-              className="w-full rounded-xl border p-4 outline-none transition focus:border-[#123C73]"
+              className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <button
