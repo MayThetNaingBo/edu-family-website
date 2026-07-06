@@ -36,7 +36,7 @@ const programmes = [
 
 export default function AcademicProgrammes() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           title="Academic Programmes"
@@ -44,15 +44,15 @@ export default function AcademicProgrammes() {
         />
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {programmes.map((programme) => (
-            <FeatureCard
-              key={programme.title}
-              icon={programme.icon}
-              title={programme.title}
-              description={programme.description}
-            />
-          ))}
-        </div>
+                  {programmes.map((programme) => (
+                    <FeatureCard
+                      key={programme.title}
+                      icon={programme.icon}
+                      title={programme.title}
+                      description={programme.description}
+                    />
+                  ))}
+                </div>
       </div>
     </section>
   );

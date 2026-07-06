@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutStory() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14 md:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
         {/* Left Image */}
         <div className="relative">
@@ -15,8 +15,8 @@ export default function AboutStory() {
           />
 
           <div className="absolute -bottom-6 -right-6 rounded-2xl bg-[#123C73] px-8 py-6 text-white shadow-xl">
-            <h3 className="text-3xl font-bold text-[#D4AF37]">4+</h3>
-            <p className="mt-1 text-sm">Years of Excellence</p>
+            <h3 className="text-3xl font-bold text-[#D4AF37]">5+</h3>
+            <p className="mt-1 text-sm">Years of <p>Teaching Experience</p> </p>
           </div>
         </div>
 
@@ -26,7 +26,7 @@ export default function AboutStory() {
             OUR STORY
           </p>
 
-          <h2 className="mt-4 text-5xl font-bold leading-tight text-[#123C73]">
+          <h2 className="mt-4 text-3xl md:text-5xl font-bold leading-tight text-[#123C73]">
             Building Future Leaders Through
             <span className="text-[#D4AF37]"> Quality Education</span>
           </h2>

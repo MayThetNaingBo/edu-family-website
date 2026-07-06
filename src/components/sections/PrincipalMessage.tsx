@@ -4,7 +4,7 @@ import SectionHeading from "@/src/components/common/SectionHeading";
 
 export default function PrincipalMessage() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-10">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           title="Our Commitment"

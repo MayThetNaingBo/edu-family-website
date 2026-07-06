@@ -4,31 +4,41 @@ const stats = [
   { icon: Users, value: "500+", label: "Students" },
   { icon: UserRoundCheck, value: "30+", label: "Teachers" },
   { icon: GraduationCap, value: "95%", label: "Success Rate" },
-  { icon: Award, value: "4", label: "Years of Excellence" },
+  { icon: Award, value: "3+", label: "Years of Excellence" },
 ];
 
 export default function Stats() {
   return (
-    <section className="bg-white px-6 pb-16">
-      <div className="mx-auto grid max-w-6xl gap-6 rounded-2xl bg-white p-8 shadow-xl md:grid-cols-4">
-        {stats.map((item) => {
-          const Icon = item.icon;
+    <section className="-mt-8 bg-transparent px-4 pb-10 md:-mt-12 md:px-6">
+      <div className="relative z-10 mx-auto max-w-7xl rounded-2xl bg-white shadow-xl">
+        <div className="grid grid-cols-1 divide-y divide-gray-200 sm:grid-cols-2 sm:divide-x sm:divide-y-0 md:grid-cols-4">
+          {stats.map((item) => {
+            const Icon = item.icon;
 
-          return (
-            <div key={item.label} className="flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#123C73] text-white">
-                <Icon size={26} />
-              </div>
+            return (
+              <div
+                key={item.label}
+                className="flex items-center justify-center gap-4 px-5 py-5 sm:px-6 md:px-8"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#123C73] text-white md:h-12 md:w-12">
+                  <Icon size={20} strokeWidth={2} />
+                </div>
 
-              <div>
-                <h3 className="text-3xl font-bold text-[#123C73]">
-                  {item.value}
-                </h3>
-                <p className="text-sm text-gray-600">{item.label}</p>
+                <div>
+                  <h3 className="text-3xl font-bold leading-none text-[#123C73] md:text-4xl">
+                    {item.value}
+                  </h3>
+
+                  <div className="mt-2 h-1 w-8 rounded-full bg-[#D4AF37]" />
+
+                  <p className="mt-2 text-sm font-medium text-gray-600">
+                    {item.label}
+                  </p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

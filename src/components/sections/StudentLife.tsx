@@ -12,10 +12,12 @@ const activities = [
     description:
       "Our classrooms encourage student participation, critical thinking, and collaboration through modern teaching methods and engaging lessons.",
     images: [
-      "/student-life-classroom-1.jpg",
-      "/student-life-classroom-2.jpg",
-      "/student-life-classroom-3.jpg",
-      "/student-life-classroom-4.jpg",
+      "/classroom-1.jpg",
+      "/classroom-2.jpg",
+      "/classroom-3.jpg",
+      "/classroom-4.jpg",
+      "/classroom-5.jpg",
+      "/classroom-6.jpg",
     ],
     points: [
       "Student-centered learning environment",
@@ -25,15 +27,17 @@ const activities = [
     ],
   },
   {
-    title: "Science Experiments",
+    title: "Practical Experiments",
     subtitle: "Learning Through Discovery",
     description:
       "Students explore scientific ideas through practical experiments, observation, teamwork, and hands-on learning activities.",
     images: [
-      "/student-life-science-1.jpg",
-      "/student-life-science-2.jpg",
-      "/student-life-science-3.jpg",
-      "/student-life-science-4.jpg",
+      "/lab-1.jpg",
+      "/lab-2.jpg",
+      "/lab-3.jpg",
+      "/lab-4.jpg",
+      "/lab-5.jpg",
+      "/lab-6.jpg",
     ],
     points: [
       "Hands-on experiments",
@@ -43,15 +47,16 @@ const activities = [
     ],
   },
   {
-    title: "Sports Activities",
+    title: "Sports & Activities",
     subtitle: "Healthy Body, Strong Mind",
     description:
       "Sports help students build teamwork, discipline, leadership, confidence, and a healthy lifestyle.",
     images: [
-      "/student-life-sports-1.jpg",
-      "/student-life-sports-2.jpg",
-      "/student-life-sports-3.jpg",
-      "/student-life-sports-4.jpg",
+      "/sports-1.jpg",
+      "/sports-2.jpg",
+      "/sports-3.jpg",
+      "/sports-4.jpg",
+      "/sports-5.jpg",
     ],
     points: [
       "Teamwork and discipline",
@@ -61,15 +66,18 @@ const activities = [
     ],
   },
   {
-    title: "School Events",
+    title: "Trips & Excursions",
     subtitle: "Celebrating Talent and Unity",
     description:
       "School events give students opportunities to perform, lead, celebrate, and grow together as one EDU Family community.",
     images: [
-      "/student-life-events-1.jpg",
-      "/student-life-events-2.jpg",
-      "/student-life-events-3.jpg",
-      "/student-life-events-4.jpg",
+      "/events-1.jpg",
+      "/events-2.jpg",
+      "/events-3.jpg",
+      "/events-4.jpg",
+      "/events-5.jpg",
+      "/events-6.jpg",
+      "/events-7.jpg",
     ],
     points: [
       "Annual celebrations",
@@ -126,7 +134,7 @@ export default function StudentLife() {
   }, []);
 
   return (
-    <section className="bg-[#F8FAFC] py-24">
+    <section className="bg-[#F8FAFC] py-14 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           title="Student Life"
@@ -155,8 +163,8 @@ export default function StudentLife() {
                     {item.title}
                   </h3>
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#123C73] text-[#D4AF37]">
-                    <Search size={22} />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full  text-[#D4AF37]">
+                    <Search size={20} />
                   </div>
                 </div>
               </div>

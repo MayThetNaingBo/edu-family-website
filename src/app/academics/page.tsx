@@ -10,10 +10,11 @@ export default function AcademicsPage() {
       <PageBanner
         title="Academics"
         subtitle="Inspiring Excellence Through Quality Education"
+        imageUrl="/academic-banner.jpg"
       />
 
       <AcademicProgrammes />
-      <SubjectsOffered />
+      {/* <SubjectsOffered /> */}
       <TeachingMethodology />
       <StudentLife />   
     </>

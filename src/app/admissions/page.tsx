@@ -9,6 +9,7 @@ export default function AdmissionsPage() {
       <PageBanner
         title="Admissions"
         subtitle="Join the EDU Family for the 2026–2027 Academic Year"
+        imageUrl="/admissions-banner.jpg"
       />
 
       <AdmissionsOverview />

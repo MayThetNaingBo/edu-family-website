@@ -1,70 +1,38 @@
-import {
-  Clock,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-} from "lucide-react";
-
-import { FaFacebookF } from "react-icons/fa";
+import Image from "next/image";
+import { Send } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="bg-[#F8FAFC] py-24">
+    <section className="bg-[#F8FAFC] py-14 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
-        {/* Contact Information */}
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-5xl font-bold text-[#123C73]">
-            Contact Information
-          </h2>
-
-          <div className="mt-5 flex items-center gap-4 text-[#D4AF37]">
-            <span className="h-[3px] w-20 bg-[#D4AF37]" />
-            <span className="text-2xl">★</span>
-            <span className="h-[3px] w-20 bg-[#D4AF37]" />
-          </div>
-
-          <p className="mt-8 text-lg leading-8 text-gray-600">
-            We'd love to hear from you. Feel free to contact us using any of the
-            methods below.
-          </p>
-
-          <div className="mt-10 space-y-7">
-            <ContactItem
-              icon={<Phone size={24} />}
-              title="Phone"
-              value="+95 9 788 777163"
+        {/* Contact Image */}
+        <div className="overflow-hidden rounded-3xl bg-white shadow-xl">
+          <div className="relative h-full min-h-[620px]">
+            <Image
+              src="/contact-sch.jpg"
+              alt="EDU Family Private High School"
+              fill
+              className="object-cover"
             />
 
-            <ContactItem
-              icon={<Mail size={24} />}
-              title="Email"
-              value="edufamily2023@gmail.com"
-            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#123C73]/80 via-transparent to-transparent" />
 
-            <ContactItem
-              icon={<MapPin size={24} />}
-              title="Address"
-              value="Insein, Yangon, Myanmar"
-            />
+            <div className="absolute bottom-10 left-10 right-10 text-white">
+              <h2 className="text-4xl font-bold">
+                We Would Love to Hear From You
+              </h2>
 
-            <ContactItem
-              icon={<Clock size={24} />}
-              title="Office Hours"
-              value="Monday - Saturday | 8:00 AM - 4:00 PM"
-            />
-
-            <ContactItem
-  icon={<FaFacebookF size={22} />}
-  title="Facebook"
-  value="EDU Family Private High School"
-/>
+              <p className="mt-4 leading-8 text-gray-100">
+                Contact EDU Family Private High School for admissions, campus
+                visits, and general enquiries.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Contact Form */}
         <div className="rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-5xl font-bold text-[#123C73]">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#123C73]">
             Send Us a Message
           </h2>
 
@@ -127,33 +95,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ContactItem({
-  icon,
-  title,
-  value,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  value: string;
-}) {
-  return (
-    <div className="flex items-center gap-5 border-b border-gray-200 pb-6 last:border-b-0">
-      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#123C73] text-[#D4AF37]">
-        {icon}
-      </div>
-
-      <div>
-        <h3 className="text-xl font-bold text-[#123C73]">
-          {title}
-        </h3>
-
-        <p className="mt-1 text-gray-600">
-          {value}
-        </p>
-      </div>
-    </div>
   );
 }

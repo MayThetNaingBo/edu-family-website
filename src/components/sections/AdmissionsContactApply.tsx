@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export default function AdmissionsContactApply() {
   return (
-    <section className="bg-[#F8FAFC] py-24">
+    <section className="bg-[#F8FAFC] py-14 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
         {/* Visit Campus */}
 
         <div className="rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-5xl font-bold text-[#123C73]">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#123C73]">
             Visit Our Campus
           </h2>
 
@@ -26,7 +26,7 @@ export default function AdmissionsContactApply() {
 
           <div className="mt-10 space-y-8">
             <div className="flex gap-4">
-              <MapPin className="mt-1 text-[#D4AF37]" size={28} />
+              <MapPin size={60} className="mt-1 text-[#D4AF37]" />
 
               <div>
                 <h3 className="text-xl font-bold text-[#123C73]">
@@ -34,7 +34,11 @@ export default function AdmissionsContactApply() {
                 </h3>
 
                 <p className="mt-2 text-gray-600">
-                  Insein, Yangon, Myanmar
+                  EDU Family Private High School
+No. 219, Kwet Thit (2) West Street
+Near Shwe Sein Aye Pagoda
+Insein Township
+Yangon 11011, Myanmar
                 </p>
               </div>
             </div>
@@ -48,9 +52,9 @@ export default function AdmissionsContactApply() {
                 </h3>
 
                 <p className="mt-2 text-gray-600">
-                  Monday – Saturday
+                  Monday – Sunday
                   <br />
-                  8:00 AM – 4:00 PM
+                  8:00 AM –6:00 PM
                 </p>
               </div>
             </div>
@@ -67,7 +71,7 @@ export default function AdmissionsContactApply() {
         {/* Apply Now */}
 
         <div className="rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-5xl font-bold text-[#123C73]">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#123C73]">
             Apply Now
           </h2>
 
@@ -77,12 +81,12 @@ export default function AdmissionsContactApply() {
             <span className="h-[3px] w-20 bg-[#D4AF37]" />
           </div>
 
-          <p className="mt-8 text-lg leading-8 text-gray-600">
+          <p className="mt-8 text-lg leading-8 text-gray-800">
             EDU Family currently accepts applications through a manual
             admission process.
           </p>
 
-          <p className="mt-6 leading-8 text-gray-600">
+          <p className="mt-6 leading-8 text-gray-800">
             Parents are encouraged to visit the school campus or contact
             our admissions office to begin the enrolment process.
           </p>
@@ -102,11 +106,11 @@ export default function AdmissionsContactApply() {
           </div>
 
           <a
-            href="#"
+            href="/Brochure.pdf"
             className="mt-10 flex items-center justify-center gap-3 rounded-xl bg-[#123C73] px-6 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#D4AF37] hover:text-[#123C73]"
           >
             <Download size={22} />
-            Download Enquiry Form
+            Download Brochure
           </a>
         </div>
       </div>

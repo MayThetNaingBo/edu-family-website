@@ -1,33 +1,37 @@
-import { BookOpen, GraduationCap, School, UsersRound } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/src/components/common/SectionHeading";
 
 const programmes = [
   {
-    icon: School,
     title: "Primary",
-    description: "Strong foundations in language, mathematics, science, and character development.",
+    image: "/primary.jpg",
+    description:
+      "Strong foundations in language, mathematics, science, and character development.",
   },
   {
-    icon: BookOpen,
     title: "Middle School",
-    description: "Building confidence, discipline, communication skills, and independent learning.",
+    image: "/middle.jpg",
+    description:
+      "Building confidence, discipline, communication skills, and independent learning.",
   },
   {
-    icon: GraduationCap,
     title: "High School",
-    description: "Preparing students for examinations, higher education, and future opportunities.",
+    image: "/high.jpg",
+    description:
+      "Preparing students for examinations, higher education, and future opportunities.",
   },
   {
-    icon: UsersRound,
     title: "Activities",
-    description: "Supporting student growth through competitions, teamwork, sports, and events.",
+    image: "/activities.jpg",
+    description:
+      "Supporting student growth through competitions, teamwork, sports, and events.",
   },
 ];
 
 export default function HomeAcademicProgrammes() {
   return (
-    <section className="bg-[#F8FAFC] py-24">
+    <section className="bg-[#F8FAFC] py-14 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           title="Academic Programmes"
@@ -35,28 +39,33 @@ export default function HomeAcademicProgrammes() {
         />
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {programmes.map((program) => {
-            const Icon = program.icon;
+          {programmes.map((programme) => (
+            <div
+              key={programme.title}
+              className="overflow-hidden rounded-3xl bg-white shadow-lg"
+            >
+              <div className="relative h-56">
+                <Image
+                  src={programme.image}
+                  alt={programme.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
 
-            return (
-              <div
-                key={program.title}
-                className="rounded-3xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-              >
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#123C73] text-white">
-                  <Icon size={30} />
-                </div>
-
+              <div className="p-7">
                 <h3 className="text-2xl font-bold text-[#123C73]">
-                  {program.title}
+                  {programme.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-gray-600">
-                  {program.description}
+                <div className="mt-3 h-1 w-12 rounded-full bg-[#D4AF37]" />
+
+                <p className="mt-5 leading-8 text-gray-600">
+                  {programme.description}
                 </p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
         <div className="mt-12 text-center">

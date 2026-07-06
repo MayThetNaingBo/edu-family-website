@@ -31,7 +31,7 @@ const features = [
 
 export default function HomeWhyChoose() {
   return (
-    <section className="bg-[#F8FAFC] py-24">
+    <section className="bg-[#F8FAFC] py-20">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           title="Why Choose EDU Family"
