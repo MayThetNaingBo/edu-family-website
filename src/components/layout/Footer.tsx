@@ -16,7 +16,7 @@ export default function Footer() {
         </p>
 
         <p className="mt-1 text-[#123C73]/75">
-          Website designed & developed by{" "}
+          Designed & Developed by{" "}
           <a
             href="https://maythetnaingbo.com"
             target="_blank"
