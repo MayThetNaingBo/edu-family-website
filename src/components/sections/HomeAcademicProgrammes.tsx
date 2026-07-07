@@ -11,7 +11,7 @@ export default function HomeAcademicProgrammes() {
   const programmes = [
     {
       title: t.homeProgrammes.primaryTitle,
-      image: "/Primary.jpg",
+      image: "/primary-lvl.jpg",
       description: t.homeProgrammes.primaryDesc,
     },
     {
