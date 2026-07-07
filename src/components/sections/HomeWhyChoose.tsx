@@ -1,41 +1,47 @@
-import { BookOpen, GraduationCap, HeartHandshake, ShieldCheck } from "lucide-react";
+"use client";
+
+import {
+  GraduationCap,
+  BookOpen,
+  Users,
+  ShieldCheck,
+} from "lucide-react";
 import FeatureCard from "@/src/components/common/FeatureCard";
 import SectionHeading from "@/src/components/common/SectionHeading";
+import { useLanguage } from "@/src/context/LanguageContext";
 
-const features = [
-  {
-    icon: GraduationCap,
-    title: "Quality Education",
-    description:
-      "We provide strong academic foundations with care, discipline, and student-focused teaching.",
-  },
-  {
-    icon: BookOpen,
-    title: "Modern Learning",
-    description:
-      "Students learn through active lessons, discussion, practical activities, and guided support.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Family Community",
-    description:
-      "We work closely with parents and students to create a caring school environment.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Safe Environment",
-    description:
-      "Our school promotes respect, responsibility, and a positive learning atmosphere.",
-  },
-];
+export default function WhyChoose() {
+  const { t } = useLanguage();
 
-export default function HomeWhyChoose() {
+  const features = [
+    {
+      icon: GraduationCap,
+      title: t.whyChoose.qualityTitle,
+      description: t.whyChoose.qualityDesc,
+    },
+    {
+      icon: BookOpen,
+      title: t.whyChoose.modernTitle,
+      description: t.whyChoose.modernDesc,
+    },
+    {
+      icon: Users,
+      title: t.whyChoose.caringTitle,
+      description: t.whyChoose.caringDesc,
+    },
+    {
+      icon: ShieldCheck,
+      title: t.whyChoose.safeTitle,
+      description: t.whyChoose.safeDesc,
+    },
+  ];
+
   return (
-    <section className="bg-[#F8FAFC] py-20">
+    <section className="bg-[#F8FAFC] pt-12 pb-20">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
-          title="Why Choose EDU Family"
-          subtitle="Nurturing Minds, Building Futures"
+          title={t.whyChoose.title}
+          subtitle={t.whyChoose.subtitle}
         />
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">

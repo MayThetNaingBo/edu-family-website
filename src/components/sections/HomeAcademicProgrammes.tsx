@@ -1,41 +1,42 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/src/components/common/SectionHeading";
-
-const programmes = [
-  {
-    title: "Primary",
-    image: "/primary.jpg",
-    description:
-      "Strong foundations in language, mathematics, science, and character development.",
-  },
-  {
-    title: "Middle School",
-    image: "/middle.jpg",
-    description:
-      "Building confidence, discipline, communication skills, and independent learning.",
-  },
-  {
-    title: "High School",
-    image: "/high.jpg",
-    description:
-      "Preparing students for examinations, higher education, and future opportunities.",
-  },
-  {
-    title: "Activities",
-    image: "/activities.jpg",
-    description:
-      "Supporting student growth through competitions, teamwork, sports, and events.",
-  },
-];
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function HomeAcademicProgrammes() {
+  const { t } = useLanguage();
+
+  const programmes = [
+    {
+      title: t.homeProgrammes.primaryTitle,
+      image: "/Primary.jpg",
+      description: t.homeProgrammes.primaryDesc,
+    },
+    {
+      title: t.homeProgrammes.middleTitle,
+      image: "/middle.jpg",
+      description: t.homeProgrammes.middleDesc,
+    },
+    {
+      title: t.homeProgrammes.highTitle,
+      image: "/high.jpg",
+      description: t.homeProgrammes.highDesc,
+    },
+    {
+      title: t.homeProgrammes.activitiesTitle,
+      image: "/activities.jpg",
+      description: t.homeProgrammes.activitiesDesc,
+    },
+  ];
+
   return (
     <section className="bg-[#F8FAFC] py-14 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
-          title="Academic Programmes"
-          subtitle="Learning Pathways for Every Student"
+          title={t.homeProgrammes.title}
+          subtitle={t.homeProgrammes.subtitle}
         />
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -73,7 +74,7 @@ export default function HomeAcademicProgrammes() {
             href="/academics"
             className="inline-flex rounded-xl bg-[#123C73] px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#D4AF37] hover:text-[#123C73]"
           >
-            Explore Academics
+            {t.homeProgrammes.button}
           </Link>
         </div>
       </div>

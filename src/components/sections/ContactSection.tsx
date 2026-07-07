@@ -1,11 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import { Send } from "lucide-react";
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function ContactSection() {
+  const { language, t } = useLanguage();
+
+  const titleClass =
+    language === "en"
+      ? "font-serif text-3xl leading-tight md:text-5xl"
+      : "font-sans text-[1.9rem] leading-[1.55] md:text-[2.5rem]";
+
   return (
     <section className="bg-[#F8FAFC] py-14 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
-        {/* Contact Image */}
         <div className="overflow-hidden rounded-3xl bg-white shadow-xl">
           <div className="relative h-full min-h-[620px]">
             <Image
@@ -18,22 +27,20 @@ export default function ContactSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#123C73]/80 via-transparent to-transparent" />
 
             <div className="absolute bottom-10 left-10 right-10 text-white">
-              <h2 className="text-4xl font-bold">
-                We Would Love to Hear From You
+              <h2 className={`font-bold ${titleClass}`}>
+                {t.contactSection.imageTitle}
               </h2>
 
               <p className="mt-4 leading-8 text-gray-100">
-                Contact EDU Family Private High School for admissions, campus
-                visits, and general enquiries.
+                {t.contactSection.imageDescription}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Contact Form */}
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-3xl font-bold text-[#123C73] md:text-5xl">
-            Send Us a Message
+        <div className="rounded-3xl bg-white p-8 shadow-xl md:p-10">
+          <h2 className={`font-bold text-[#123C73] ${titleClass}`}>
+            {t.contactSection.formTitle}
           </h2>
 
           <div className="mt-5 flex items-center gap-4 text-[#D4AF37]">
@@ -45,31 +52,31 @@ export default function ContactSection() {
           <form className="mt-10 space-y-6">
             <input
               type="text"
-              placeholder="Full Name"
+              placeholder={t.contactSection.fullName}
               className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder={t.contactSection.email}
               className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <input
               type="tel"
-              placeholder="Phone Number"
+              placeholder={t.contactSection.phone}
               className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <input
               type="text"
-              placeholder="Subject"
+              placeholder={t.contactSection.subject}
               className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
             <textarea
               rows={6}
-              placeholder="Your Message"
+              placeholder={t.contactSection.message}
               className="w-full rounded-xl border border-gray-300 bg-white p-4 text-base text-gray-900 placeholder:text-gray-500 outline-none transition focus:border-[#123C73] focus:ring-2 focus:ring-[#123C73]/20"
             />
 
@@ -78,13 +85,12 @@ export default function ContactSection() {
               className="flex w-full items-center justify-center gap-3 rounded-xl bg-[#123C73] py-4 text-lg font-bold text-white transition hover:bg-[#D4AF37] hover:text-[#123C73]"
             >
               <Send size={22} />
-              Send Message
+              {t.contactSection.button}
             </button>
           </form>
         </div>
       </div>
 
-      {/* Google Map */}
       <div className="mx-auto mt-16 max-w-7xl px-6">
         <div className="overflow-hidden rounded-3xl shadow-xl">
           <iframe

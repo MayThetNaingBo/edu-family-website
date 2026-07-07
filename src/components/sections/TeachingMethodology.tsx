@@ -1,40 +1,41 @@
+"use client";
+
 import { Brain, MessageCircle, PenTool, Target } from "lucide-react";
 import SectionHeading from "@/src/components/common/SectionHeading";
-
-const methods = [
-  {
-    icon: Brain,
-    title: "Think",
-    description:
-      "Students are encouraged to ask questions, explore ideas, and understand concepts clearly.",
-  },
-  {
-    icon: MessageCircle,
-    title: "Discuss",
-    description:
-      "Class discussions help students develop communication, teamwork, and confidence.",
-  },
-  {
-    icon: PenTool,
-    title: "Practice",
-    description:
-      "Students apply what they learn through exercises, projects, and classroom activities.",
-  },
-  {
-    icon: Target,
-    title: "Achieve",
-    description:
-      "Regular feedback and assessments help students improve and reach their academic goals.",
-  },
-];
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function TeachingMethodology() {
+  const { t } = useLanguage();
+
+  const methods = [
+    {
+      icon: Brain,
+      title: t.teachingMethodology.thinkTitle,
+      description: t.teachingMethodology.thinkDesc,
+    },
+    {
+      icon: MessageCircle,
+      title: t.teachingMethodology.discussTitle,
+      description: t.teachingMethodology.discussDesc,
+    },
+    {
+      icon: PenTool,
+      title: t.teachingMethodology.practiceTitle,
+      description: t.teachingMethodology.practiceDesc,
+    },
+    {
+      icon: Target,
+      title: t.teachingMethodology.achieveTitle,
+      description: t.teachingMethodology.achieveDesc,
+    },
+  ];
+
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          title="Teaching Methodology"
-          subtitle="How We Help Students Learn Better"
+          title={t.teachingMethodology.title}
+          subtitle={t.teachingMethodology.subtitle}
         />
 
         <div className="mt-10 overflow-hidden rounded-3xl border border-gray-200 bg-[#F8FAFC] shadow-lg">

@@ -1,13 +1,18 @@
-import { Award, GraduationCap, Users, UserRoundCheck } from "lucide-react";
+"use client";
 
-const stats = [
-  { icon: Users, value: "500+", label: "Students" },
-  { icon: UserRoundCheck, value: "30+", label: "Teachers" },
-  { icon: GraduationCap, value: "95%", label: "Success Rate" },
-  { icon: Award, value: "3+", label: "Years of Excellence" },
-];
+import { Award, GraduationCap, Users, UserRoundCheck } from "lucide-react";
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function Stats() {
+  const { t } = useLanguage();
+
+  const stats = [
+    { icon: Users, value: t.stats.student, label: t.stats.students },
+    { icon: UserRoundCheck, value: t.stats.teacher, label: t.stats.teachers },
+    { icon: GraduationCap, value: t.stats.success, label: t.stats.successRate },
+    { icon: Award, value: t.stats.year, label: t.stats.years },
+  ];
+
   return (
     <section className="-mt-8 bg-transparent px-4 pb-10 md:-mt-12 md:px-6">
       <div className="relative z-10 mx-auto max-w-7xl rounded-2xl bg-white shadow-xl">

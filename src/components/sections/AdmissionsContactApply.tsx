@@ -1,15 +1,23 @@
+"use client";
+
 import { Download, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function AdmissionsContactApply() {
+  const { language, t } = useLanguage();
+
+  const titleClass =
+    language === "en"
+      ? "font-serif text-3xl leading-tight md:text-5xl"
+      : "font-sans text-[1.9rem] leading-[1.55] md:text-[2.5rem]";
+
   return (
     <section className="bg-[#F8FAFC] py-14 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
-        {/* Visit Campus */}
-
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#123C73]">
-            Visit Our Campus
+        <div className="rounded-3xl bg-white p-8 shadow-xl md:p-10">
+          <h2 className={`font-bold text-[#123C73] ${titleClass}`}>
+            {t.admissionsContactApply.visitTitle}
           </h2>
 
           <div className="mt-5 flex items-center gap-4 text-[#D4AF37]">
@@ -19,42 +27,34 @@ export default function AdmissionsContactApply() {
           </div>
 
           <p className="mt-8 text-lg leading-8 text-gray-600">
-            We warmly welcome parents and students to visit our campus,
-            explore our learning environment, and meet our teachers before
-            making an admission decision.
+            {t.admissionsContactApply.visitDescription}
           </p>
 
           <div className="mt-10 space-y-8">
             <div className="flex gap-4">
-              <MapPin size={60} className="mt-1 text-[#D4AF37]" />
+              <MapPin size={46} className="mt-1 shrink-0 text-[#D4AF37]" />
 
               <div>
                 <h3 className="text-xl font-bold text-[#123C73]">
-                  School Address
+                  {t.admissionsContactApply.addressTitle}
                 </h3>
 
-                <p className="mt-2 text-gray-600">
-                  EDU Family Private High School
-No. 219, Kwet Thit (2) West Street
-Near Shwe Sein Aye Pagoda
-Insein Township
-Yangon 11011, Myanmar
+                <p className="mt-2 whitespace-pre-line leading-8 text-gray-600">
+                  {t.admissionsContactApply.address}
                 </p>
               </div>
             </div>
 
             <div className="flex gap-4">
-              <Phone className="mt-1 text-[#D4AF37]" size={28} />
+              <Phone className="mt-1 shrink-0 text-[#D4AF37]" size={28} />
 
               <div>
                 <h3 className="text-xl font-bold text-[#123C73]">
-                  Office Hours
+                  {t.admissionsContactApply.officeHoursTitle}
                 </h3>
 
-                <p className="mt-2 text-gray-600">
-                  Monday – Sunday
-                  <br />
-                  8:00 AM –6:00 PM
+                <p className="mt-2 whitespace-pre-line leading-8 text-gray-600">
+                  {t.admissionsContactApply.officeHours}
                 </p>
               </div>
             </div>
@@ -64,15 +64,13 @@ Yangon 11011, Myanmar
             href="/contact"
             className="mt-10 inline-flex rounded-xl bg-[#123C73] px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#D4AF37] hover:text-[#123C73]"
           >
-            Contact Us
+            {t.admissionsContactApply.contactButton}
           </Link>
         </div>
 
-        {/* Apply Now */}
-
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#123C73]">
-            Apply Now
+        <div className="rounded-3xl bg-white p-8 shadow-xl md:p-10">
+          <h2 className={`font-bold text-[#123C73] ${titleClass}`}>
+            {t.admissionsContactApply.applyTitle}
           </h2>
 
           <div className="mt-5 flex items-center gap-4 text-[#D4AF37]">
@@ -82,35 +80,32 @@ Yangon 11011, Myanmar
           </div>
 
           <p className="mt-8 text-lg leading-8 text-gray-800">
-            EDU Family currently accepts applications through a manual
-            admission process.
+            {t.admissionsContactApply.applyDesc1}
           </p>
 
           <p className="mt-6 leading-8 text-gray-800">
-            Parents are encouraged to visit the school campus or contact
-            our admissions office to begin the enrolment process.
+            {t.admissionsContactApply.applyDesc2}
           </p>
 
-          <div className="mt-10 rounded-2xl bg-[#F8FAFC] p-8">
+          <div className="mt-10 rounded-2xl bg-[#F8FAFC] p-6 md:p-8">
             <h3 className="text-2xl font-bold text-[#123C73]">
-              Manual Admission Process
+              {t.admissionsContactApply.manualTitle}
             </h3>
 
             <ul className="mt-6 space-y-4 text-gray-600">
-              <li>• Visit the school campus</li>
-              <li>• Meet our admissions staff</li>
-              <li>• Collect the application form</li>
-              <li>• Submit the required information</li>
-              <li>• Complete the admission process</li>
+              {t.admissionsContactApply.steps.map((step) => (
+                <li key={step}>• {step}</li>
+              ))}
             </ul>
           </div>
 
           <a
             href="/Brochure.pdf"
+            download="EDU-Family-Brochure.pdf"
             className="mt-10 flex items-center justify-center gap-3 rounded-xl bg-[#123C73] px-6 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#D4AF37] hover:text-[#123C73]"
           >
             <Download size={22} />
-            Download Brochure
+            {t.admissionsContactApply.brochure}
           </a>
         </div>
       </div>

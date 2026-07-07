@@ -4,13 +4,16 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, Search, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import SectionHeading from "@/src/components/common/SectionHeading";
+import { useLanguage } from "@/src/context/LanguageContext";
 
+
+export default function StudentLife() {
+  const { t } = useLanguage();
 const activities = [
   {
-    title: "Interactive Classrooms",
-    subtitle: "Active Learning, Active Minds",
-    description:
-      "Our classrooms encourage student participation, critical thinking, and collaboration through modern teaching methods and engaging lessons.",
+    title: t.studentLife.classroom.title,
+    subtitle: t.studentLife.classroom.subtitle,
+    description: t.studentLife.classroom.description,
     images: [
       "/classroom-1.jpg",
       "/classroom-2.jpg",
@@ -19,18 +22,12 @@ const activities = [
       "/classroom-5.jpg",
       "/classroom-6.jpg",
     ],
-    points: [
-      "Student-centered learning environment",
-      "Use of technology and multimedia",
-      "Encourages questions and discussion",
-      "Builds confidence and communication",
-    ],
+    points: t.studentLife.classroom.points,
   },
   {
-    title: "Practical Experiments",
-    subtitle: "Learning Through Discovery",
-    description:
-      "Students explore scientific ideas through practical experiments, observation, teamwork, and hands-on learning activities.",
+    title: t.studentLife.lab.title,
+    subtitle: t.studentLife.lab.subtitle,
+    description: t.studentLife.lab.description,
     images: [
       "/lab-1.jpg",
       "/lab-2.jpg",
@@ -39,18 +36,12 @@ const activities = [
       "/lab-5.jpg",
       "/lab-6.jpg",
     ],
-    points: [
-      "Hands-on experiments",
-      "Team-based learning",
-      "Observation and analysis",
-      "Creative problem solving",
-    ],
+    points: t.studentLife.lab.points,
   },
   {
-    title: "Sports & Activities",
-    subtitle: "Healthy Body, Strong Mind",
-    description:
-      "Sports help students build teamwork, discipline, leadership, confidence, and a healthy lifestyle.",
+    title: t.studentLife.sports.title,
+    subtitle: t.studentLife.sports.subtitle,
+    description: t.studentLife.sports.description,
     images: [
       "/sports-1.jpg",
       "/sports-2.jpg",
@@ -58,18 +49,12 @@ const activities = [
       "/sports-4.jpg",
       "/sports-5.jpg",
     ],
-    points: [
-      "Teamwork and discipline",
-      "Physical fitness",
-      "Leadership skills",
-      "School spirit",
-    ],
+    points: t.studentLife.sports.points,
   },
   {
-    title: "Trips & Excursions",
-    subtitle: "Celebrating Talent and Unity",
-    description:
-      "School events give students opportunities to perform, lead, celebrate, and grow together as one EDU Family community.",
+    title: t.studentLife.trips.title,
+    subtitle: t.studentLife.trips.subtitle,
+    description: t.studentLife.trips.description,
     images: [
       "/events-1.jpg",
       "/events-2.jpg",
@@ -79,16 +64,10 @@ const activities = [
       "/events-6.jpg",
       "/events-7.jpg",
     ],
-    points: [
-      "Annual celebrations",
-      "Student performances",
-      "Cultural activities",
-      "Community bonding",
-    ],
+    points: t.studentLife.trips.points,
   },
 ];
 
-export default function StudentLife() {
   const [selectedActivity, setSelectedActivity] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState(0);
 
@@ -263,7 +242,7 @@ export default function StudentLife() {
               </div>
 
               <p className="mt-6 text-sm text-gray-500">
-                {selectedImage + 1} / {activity.images.length} photos
+                {selectedImage + 1} / {activity.images.length} {t.studentLife.photos}
               </p>
             </div>
           </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ClipboardList,
   FileText,
@@ -7,47 +9,50 @@ import {
   CheckCircle,
 } from "lucide-react";
 import SectionHeading from "@/src/components/common/SectionHeading";
-
-const steps = [
-  {
-    icon: MessageCircle,
-    title: "Contact the School",
-    description: "Call or message our admissions office to ask about available classes and enrolment requirements.",
-  },
-  {
-    icon: MapPin,
-    title: "Visit the Campus",
-    description: "Parents are encouraged to visit the campus, meet our team, and learn more about the school environment.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Complete the Application Form",
-    description: "Collect and complete the admission form from the school office.",
-  },
-  {
-    icon: FileText,
-    title: "Submit Required Documents",
-    description: "Submit the completed form together with the required student documents.",
-  },
-  {
-    icon: UserCheck,
-    title: "Student Assessment",
-    description: "Students may be invited for an interview or assessment depending on the grade level.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Admission Confirmation",
-    description: "The school reviews the application and confirms admission after approval.",
-  },
-];
+import { useLanguage } from "@/src/context/LanguageContext";
 
 export default function AdmissionProcess() {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      icon: MessageCircle,
+      title: t.admissionProcess.contactTitle,
+      description: t.admissionProcess.contactDesc,
+    },
+    {
+      icon: MapPin,
+      title: t.admissionProcess.visitTitle,
+      description: t.admissionProcess.visitDesc,
+    },
+    {
+      icon: ClipboardList,
+      title: t.admissionProcess.applicationTitle,
+      description: t.admissionProcess.applicationDesc,
+    },
+    {
+      icon: FileText,
+      title: t.admissionProcess.documentTitle,
+      description: t.admissionProcess.documentDesc,
+    },
+    {
+      icon: UserCheck,
+      title: t.admissionProcess.assessmentTitle,
+      description: t.admissionProcess.assessmentDesc,
+    },
+    {
+      icon: CheckCircle,
+      title: t.admissionProcess.confirmationTitle,
+      description: t.admissionProcess.confirmationDesc,
+    },
+  ];
+
   return (
     <section className="bg-[#F8FAFC] py-20">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          title="Admission Process"
-          subtitle="Simple Manual Enrolment Steps"
+          title={t.admissionProcess.title}
+          subtitle={t.admissionProcess.subtitle}
         />
 
         <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg">
@@ -72,7 +77,7 @@ export default function AdmissionProcess() {
 
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[3px] text-[#D4AF37]">
-                    Step {index + 1}
+                    {t.admissionProcess.step} {index + 1}
                   </p>
 
                   <h3 className="mt-2 text-2xl font-bold text-[#123C73]">
