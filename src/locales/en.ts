@@ -336,7 +336,7 @@ contactSection: {
 //Footer Section
 footer: {
   copyright:
-    "© YEAR EDU FAMILY Private High School. All rights reserved.",
+    "© YEAR EDU Family Private High School. All rights reserved.",
 },
 };
 

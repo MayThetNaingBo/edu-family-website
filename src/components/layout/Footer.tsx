@@ -6,14 +6,28 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-[#FCFCFC] border-t-2 border-[#D4AF37] py-5">
-      <p className="text-center text-sm #123C73 text-gray-500">
-        {t.footer.copyright.replace(
-          "YEAR",
-          String(new Date().getFullYear())
-        )}
-      </p>
-      
+    <footer className="border-t-2 border-[#D4AF37] bg-[#FCFCFC] py-4">
+      <div className="px-6 text-center text-sm">
+        <p className="text-[#123C73]/75">
+          {t.footer.copyright.replace(
+            "YEAR",
+            String(new Date().getFullYear())
+          )}
+        </p>
+
+        <p className="mt-1 text-[#123C73]/75">
+          Website designed & developed by{" "}
+          <a
+            href="https://maythetnaingbo.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-[#123C73] transition-colors hover:text-[#D4AF37]"
+          >
+            May
+          </a>
+          .
+        </p>
+      </div>
     </footer>
   );
 }
