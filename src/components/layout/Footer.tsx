@@ -15,18 +15,7 @@ export default function Footer() {
           )}
         </p>
 
-        <p className="mt-1 text-[#123C73]/75">
-          Designed & Developed by{" "}
-          <a
-            href="https://maythetnaingbo.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-[#123C73] transition-colors hover:text-[#D4AF37]"
-          >
-            May
-          </a>
-          .
-        </p>
+       
       </div>
     </footer>
   );
